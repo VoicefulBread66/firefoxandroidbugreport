@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>Beep sound</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <script>
+    var int;
+    document.onload = function () {
+      document.getElementById("sound").checked = false;
+    }
+    int = setInterval(function () {
+    document.getElementById("audio").currenTime = 0
+      if (document.getElementById("sound").checked === true) {
+        document.getElementById("audio").play();
+      } else {
+    document.getElementById("audio").currentTime = 0
+    }
+    }, 1000)
+  </script>
+</head>
+<body>
+  <audio src="/beep.mp3" id="audio" preload="auto"></audio>
+  <noscript>Javascript is required for this program to run.<br></noscript>
+  <div>
+    <input id="sound" type="checkbox">
+    <label for="sound">Enable Sound</label>
+  </div>
+</body>
+</html>
